@@ -136,6 +136,7 @@ public class RAAlgorithm {
     }
 
     public static void main(String[] args) {
+/*
         String[] paths = new String[6];
         paths[0] = "importdata/18_mixtures.txt" + " " + "exportdata/18_mixtures_PIR3A.csv" + " "
                 + "importdata/18_mixtures_reference.csv" + " "
@@ -198,6 +199,15 @@ public class RAAlgorithm {
                 evaluator.exportROCCurvePoints(cut[4 + 2 * j]);
             }
         }
+	*/
+
+	 String peptideFile=args[0];
+	 String resultFile=args[1];
+
+         RAAlgorithm algorithm = new RAAlgorithm(new BayesNet());    //change classifier algorithm
+         algorithm.input(peptideFile);
+         algorithm.process();
+         algorithm.output(resultFile);
     }
 
     class ProteinSetComparator implements Comparator<RAProtein> {
